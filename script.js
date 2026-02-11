@@ -13,7 +13,7 @@ function moveNoButton() {
     const rect = noBtn.getBoundingClientRect();
     const parentRect = noBtn.parentElement.getBoundingClientRect();
 
-    noBtn.style.position = "absolute";
+    // noBtn.style.position = "absolute";
     noBtn.style.left = rect.left - parentRect.left + "px";
     noBtn.style.top = rect.top - parentRect.top + "px";
 

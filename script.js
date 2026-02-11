@@ -9,7 +9,7 @@ function moveNoButton() {
   chaosLevel++;
 
   // First time: switch to absolute positioning
-  if (!activated) {
+  /*if (!activated) {
     const rect = noBtn.getBoundingClientRect();
     const parentRect = noBtn.parentElement.getBoundingClientRect();
 
@@ -18,7 +18,7 @@ function moveNoButton() {
     noBtn.style.top = rect.top - parentRect.top + "px";
 
     activated = true;
-  }
+  }*/
 
   const container = document.querySelector(".buttons");
   const containerRect = container.getBoundingClientRect();

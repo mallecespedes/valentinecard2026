@@ -129,3 +129,23 @@ button {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* RESET BUTTON */
+.reset-btn {
+  margin-top: 20px;
+  padding: 12px 22px;
+  font-size: 16px;
+  border-radius: 999px;
+  border: none;
+  background-color: #ffb3c1;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.reset-btn:hover {
+  transform: scale(1.05);
+  background-color: #ff8fa3;
+}
+

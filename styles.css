@@ -88,15 +88,14 @@ button {
 /* PHOTO */
 .love-photo {
   width: 100%;
+  max-width: 260px;
+  max-height: 320px;
+  object-fit: cover;
   border-radius: 20px;
-  margin: 20px 0;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  margin: 20px auto;
+  display: block;
 }
 
-/* MUSIC */
-.music {
-  margin-top: 15px;
-}
 
 /* CHAOS */
 .shake {

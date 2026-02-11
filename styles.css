@@ -1,0 +1,110 @@
+/* GLOBAL */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffd6e0, #fff1f5);
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  width: 320px;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(255, 105, 135, 0.3);
+}
+
+.buttons {
+  margin-top: 25px;
+  position: relative;
+  height: 120px;
+}
+
+/* BUTTONS */
+button {
+  padding: 12px 26px;
+  font-size: 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#yesBtn {
+  background-color: #ff4d6d;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+#noBtn {
+  background-color: #ddd;
+  position: absolute;
+}
+
+/* SUCCESS PAGE */
+.success {
+  background: linear-gradient(135deg, #ffe0ec, #fff7fa);
+}
+
+.success-card {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(255, 105, 135, 0.3);
+  animation: popIn 0.6s ease;
+}
+
+.success-card h1 {
+  font-size: 2.8rem;
+  color: #ff4d6d;
+}
+
+.hearts {
+  font-size: 2rem;
+  margin: 20px 0;
+  animation: float 2s infinite ease-in-out;
+}
+
+.small {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* CHAOS */
+.shake {
+  animation: shake 0.2s infinite;
+}
+
+.panic {
+  animation: shake 0.1s infinite, spin 0.6s infinite linear;
+}
+
+/* ANIMATIONS */
+@keyframes popIn {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -2px); }
+  75% { transform: translate(-2px, -2px); }
+  100% { transform: translate(2px, 2px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

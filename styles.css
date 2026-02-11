@@ -50,7 +50,7 @@ button {
 
 #noBtn {
   background-color: #ddd;
-  position: relative;
+  position: absolute;
 }
 
 /* SUCCESS PAGE */

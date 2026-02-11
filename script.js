@@ -4,7 +4,7 @@ const yesBtn = document.getElementById("yesBtn");
 let yesScale = 1;
 let chaosLevel = 0;
 
-noBtn.addEventListener("mouseenter", () => {
+function moveNoButton() {
   chaosLevel++;
 
   const card = document.querySelector(".card");
@@ -16,13 +16,11 @@ noBtn.addEventListener("mouseenter", () => {
   noBtn.style.left = Math.random() * maxX + "px";
   noBtn.style.top = Math.random() * maxY + "px";
 
-  // YES grows
   yesScale += 0.18;
   yesBtn.style.transform = `scale(${yesScale})`;
 
-  // NO shrinks & rotates
   const shrink = Math.max(0.4, 1 - chaosLevel * 0.08);
-  const rotation = Math.random() * chaosLevel * 15 - chaosLevel * 7;
+  const rotation = Math.random() * chaosLevel * 20 - chaosLevel * 10;
 
   noBtn.style.transform = `scale(${shrink}) rotate(${rotation}deg)`;
 
@@ -31,7 +29,10 @@ noBtn.addEventListener("mouseenter", () => {
 
   if (chaosLevel > 6) noBtn.innerText = "pls stop 😭";
   if (chaosLevel > 8) noBtn.style.display = "none";
-});
+}
+
+noBtn.addEventListener("mouseenter", moveNoButton);
+noBtn.addEventListener("touchstart", moveNoButton);
 
 yesBtn.addEventListener("click", () => {
   window.location.href = "success.html";

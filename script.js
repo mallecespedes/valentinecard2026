@@ -1,3 +1,21 @@
+window.onload = () => {
+  const noBtn = document.getElementById("noBtn");
+  const yesBtn = document.getElementById("yesBtn");
+
+  if (noBtn) {
+    noBtn.style.left = "50%";
+    noBtn.style.top = "50%";
+    noBtn.style.transform = "translate(-50%, -50%)";
+    noBtn.style.display = "block";
+    noBtn.innerText = "NO 😢";
+    noBtn.classList.remove("shake", "panic");
+  }
+
+  if (yesBtn) {
+    yesBtn.style.transform = "scale(1)";
+  }
+};
+
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 

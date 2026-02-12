@@ -22,14 +22,27 @@ body {
 }
 
 /* BUTTON CONTAINER */
-.buttons {
+.play-area {
   margin-top: 25px;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  min-height: 60px;
+  width: 100%;
+  height: 140px;
+}
+
+#yesBtn {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  background-color: #ff4d6d;
+  color: white;
+}
+
+#noBtn {
+  position: absolute;
+  left: 60%;
+  bottom: 10px;
+  background-color: #ddd;
 }
 
 /* BUTTONS */
@@ -43,15 +56,6 @@ button {
   transition: transform 0.2s ease;
 }
 
-#yesBtn {
-  background-color: #ff4d6d;
-  color: white;
-}
-
-#noBtn {
-  background-color: #ddd;
-  position: relative;
-}
 
 /* SUCCESS PAGE */
 .success {

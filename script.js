@@ -1,41 +1,54 @@
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
+const playArea = document.querySelector(".play-area");
 
 let yesScale = 1;
 let chaosLevel = 0;
-let activated = false;
 
 function moveNoButton() {
   chaosLevel++;
 
-  // First time: switch to absolute positioning
-  /*if (!activated) {
-    const rect = noBtn.getBoundingClientRect();
-    const parentRect = noBtn.parentElement.getBoundingClientRect();
+  const areaRect = playArea.getBoundingClientRect();
+  const yesRect = yesBtn.getBoundingClientRect();
 
-    // noBtn.style.position = "absolute";
-    noBtn.style.left = rect.left - parentRect.left + "px";
-    noBtn.style.top = rect.top - parentRect.top + "px";
+  const maxX = areaRect.width - noBtn.offsetWidth;
+  const maxY = areaRect.height - noBtn.offsetHeight;
 
-    activated = true;
-  }*/
+  let randomX;
+  let randomY;
+  let safe = false;
 
-  const container = document.querySelector(".buttons");
-  const containerRect = container.getBoundingClientRect();
+  // Try multiple times to avoid overlap with YES
+  for (let i = 0; i < 50 && !safe; i++) {
+    randomX = Math.random() * maxX;
+    randomY = Math.random() * maxY;
 
-  const maxX = containerRect.width - noBtn.offsetWidth;
-  const maxY = containerRect.height - noBtn.offsetHeight;
+    const noFutureRect = {
+      left: areaRect.left + randomX,
+      right: areaRect.left + randomX + noBtn.offsetWidth,
+      top: areaRect.top + randomY,
+      bottom: areaRect.top + randomY + noBtn.offsetHeight
+    };
 
-  noBtn.style.left = Math.random() * maxX + "px";
-  noBtn.style.top = Math.random() * maxY + "px";
+    const overlapping =
+      !(noFutureRect.right < yesRect.left ||
+        noFutureRect.left > yesRect.right ||
+        noFutureRect.bottom < yesRect.top ||
+        noFutureRect.top > yesRect.bottom);
+
+    if (!overlapping) safe = true;
+  }
+
+  noBtn.style.left = randomX + "px";
+  noBtn.style.top = randomY + "px";
 
   // YES grows
-  yesScale += 0.18;
-  yesBtn.style.transform = `scale(${yesScale})`;
+  yesScale += 0.12;
+  yesBtn.style.transform = `translateX(-50%) scale(${yesScale})`;
 
-  // NO shrinks & rotates
-  const shrink = Math.max(0.4, 1 - chaosLevel * 0.08);
-  const rotation = Math.random() * chaosLevel * 20 - chaosLevel * 10;
+  // Chaos visuals
+  const shrink = Math.max(0.5, 1 - chaosLevel * 0.06);
+  const rotation = Math.random() * chaosLevel * 15 - chaosLevel * 7;
 
   noBtn.style.transform = `scale(${shrink}) rotate(${rotation}deg)`;
 
@@ -43,7 +56,7 @@ function moveNoButton() {
   if (chaosLevel > 4) noBtn.classList.add("panic");
 
   if (chaosLevel > 6) noBtn.innerText = "pls stop 😭";
-  if (chaosLevel > 8) noBtn.style.display = "none";
+  if (chaosLevel > 9) noBtn.style.display = "none";
 }
 
 noBtn.addEventListener("mouseenter", moveNoButton);

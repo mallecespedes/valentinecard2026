@@ -22,6 +22,16 @@ body {
 }
 
 /* BUTTON CONTAINER */
+.buttons-area {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 .play-area {
   margin-top: 25px;
   position: relative;

@@ -40,20 +40,18 @@ body {
 }
 
 #yesBtn {
-  position: absolute;
-  left: 50%;
-  bottom: 10px;
-  transform: translateX(-50%);
   background-color: #ff4d6d;
   color: white;
 }
 
-#noBtn {
+#noWrapper {
   position: absolute;
-  left: 60%;
-  bottom: 10px;
+}
+
+#noBtn {
   background-color: #ddd;
 }
+
 
 /* BUTTONS */
 button {

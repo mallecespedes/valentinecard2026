@@ -68,3 +68,11 @@ button {
     padding: 12px 25px;
   }
 }
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+}
+

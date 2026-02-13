@@ -4,6 +4,7 @@ body {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   background: linear-gradient(135deg, #ffd6e0, #fff1f5);
+  padding: 20px;
 }
 
 .main-page {

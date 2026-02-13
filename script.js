@@ -19,6 +19,10 @@ function triggerChaos() {
 
   noBtn.style.transform = `scale(${shrink}) rotate(${rotation}deg)`;
 
+  // Color chaos
+  const colors = ["#ff4d6d", "#ff758f", "#ff8fa3", "#ffb3c1", "#ffccd5"];
+  noBtn.style.backgroundColor = colors[chaosLevel % colors.length];
+
   if (chaosLevel > 2) noBtn.classList.add("shake");
   if (chaosLevel > 6) noBtn.innerText = "pls stop 🫩";
   if (chaosLevel > 9) noBtn.style.display = "none";

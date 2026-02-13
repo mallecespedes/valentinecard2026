@@ -55,30 +55,6 @@ button {
   animation: shake 0.3s infinite;
 }
 
-@keyframes shake {
-  0% { transform: rotate(-5deg); }
-  50% { transform: rotate(5deg); }
-  100% { transform: rotate(-5deg); }
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  .buttons {
-    gap: 15px;
-  }
-
-  button {
-    padding: 12px 25px;
-  }
-}
-
-@keyframes floatUp {
-  to {
-    transform: translateY(-200px);
-    opacity: 0;
-  }
-}
-
 /* SUCCESS PAGE */
 .success {
   padding: 20px;
@@ -140,3 +116,30 @@ button {
   transform: scale(1.05);
   background-color: #ff8fa3;
 }
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -2px); }
+  75% { transform: translate(-2px, -2px); }
+  100% { transform: translate(2px, 2px); }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .buttons {
+    gap: 15px;
+  }
+
+  button {
+    padding: 12px 25px;
+  }
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+}
+

@@ -20,10 +20,11 @@ function triggerChaos() {
   noBtn.style.transform = `scale(${shrink}) rotate(${rotation}deg)`;
 
   // Color chaos
-  const colors = ["#ff4d6d", "#ff758f", "#ff8fa3", "#ffb3c1", "#ffccd5"];
+  const colors = ["#FF9AA2", "#FFB7B2", "#FFFA8B", "#E2F0CB", "#B5EAD7", "#C7CEEA"];
   noBtn.style.backgroundColor = colors[chaosLevel % colors.length];
 
   if (chaosLevel > 2) noBtn.classList.add("shake");
+  if (chaosLevel > 4) noBtn.classList.add("panic");
   if (chaosLevel > 6) noBtn.innerText = "pls stop 🫩";
   if (chaosLevel > 9) noBtn.style.display = "none";
 }

@@ -31,6 +31,20 @@ body {
   gap: 20px;
 }
 
+/* normal layout first */
+#yesBtn {
+  background-color: #ff4d6d;
+  color: white;
+}
+
+#noWrapper {
+  position: relative; /* NOT absolute initially */
+}
+
+#noBtn {
+  background-color: #ddd;
+}
+
 /* BUTTONS */
 button {
   padding: 12px 26px;
@@ -40,19 +54,6 @@ button {
   cursor: pointer;
   font-weight: bold;
   transition: transform 0.2s ease;
-}
-
-#yesBtn {
-  background-color: #ff4d6d;
-  color: white;
-}
-
-#noWrapper {
-  position: absolute;
-}
-
-#noBtn {
-  background-color: #ddd;
 }
 
 /* CHAOS */
